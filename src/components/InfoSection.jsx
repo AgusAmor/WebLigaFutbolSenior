@@ -1,20 +1,20 @@
 import React from "react";
-import { FaTrophy, FaCheckCircle, FaBuilding } from "react-icons/fa";
-import { IoTrophySharp } from "react-icons/io5";
+import { FaTrophy, FaBuilding } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
 
 const InfoSection = () => {
   const benefits = [
     {
-      title: "Cupo a Copa Argentina",
+      title: "Cupo a Copas Nacionales",
       description:
-        "La oportunidad única de competir en la copa más importante del país.",
+        "La oportunidad única de competir en la Copa Argentina y la Copa Federal.",
       icon: <FaTrophy className="w-8 h-8" />,
     },
     {
-      title: "Cupo a Copa Federal",
+      title: "Localización",
       description:
-        "La oportunidad de competir en la copa más importante del país.",
-      icon: <IoTrophySharp className="w-8 h-8" />,
+        "Podés ser parte de un torneo serio y competitivo dentro de Capital Federal y Gran Buenos Aires.",
+      icon: <FaLocationDot className="w-8 h-8" />,
     },
     {
       title: "Organización Profesional",
@@ -43,7 +43,7 @@ const InfoSection = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-xl shadow-md border-l-4 border-l-sky hover:shadow-lg transition-shadow border-gray-100 group"
+              className="bg-white p-8 rounded-xl shadow-md border-l-4 border-l-sky hover:shadow-lg transition-shadow cursor-pointer border-gray-100 group"
             >
               <div className="mb-6 bg-gold w-16 h-16 rounded-lg flex items-center justify-center group-hover:bg-gold/30 transition-colors shadow-lg shadow-gold/20 text-navy group-hover:text-gold">
                 {benefit.icon}

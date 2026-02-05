@@ -6,7 +6,7 @@ const ContactForm = () => {
       {/* Decorative line */}
       <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-sky to-transparent"></div>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-6">
           <h2 className="text-3xl font-bold text-navy mb-4">Contactanos</h2>
           <p className="text-gray-600">
             ¿Tenés dudas sobre el reglamento, sedes o costos? Escribinos.

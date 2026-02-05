@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import logo from "../assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +10,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="#" className="flex items-center gap-1">
           {/* Logo placeholder if image is added later, for now text */}
-          <img src="/src/assets/logo.png" alt="Logo" className="w-20 h-auto" />
+          <img src={logo} alt="Logo" className="w-20 h-auto" />
           <div className="text-2xl font-bold tracking-tight text-gold">
             LIGA FUTBOL SENIOR
           </div>
@@ -35,9 +36,21 @@ const Header = () => {
           >
             Contacto
           </a>
-          <div className="flex flex-col text-right text-sm text-sky border-l-2 border-sky/50 pl-4">
-            <span>info@ligasenior.com</span>
-            <span>+54 11 1234-5678</span>
+          <div className="flex flex-col text-right text-sm border-l-2 border-sky/50 pl-4">
+            <a
+              href="mailto:ligadefutbolsenior@gmail.com"
+              className="text-sky hover:text-gold transition-colors"
+            >
+              ligadefutbolsenior@gmail.com
+            </a>
+            <a
+              href="https://wa.me/5491126590237"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sky hover:text-gold transition-colors"
+            >
+              +549 11 2659-0237
+            </a>
           </div>
         </nav>
 
@@ -79,9 +92,21 @@ const Header = () => {
             >
               Contacto
             </a>
-            <div className="border-t border-gray-700 pt-4 text-sm text-sky">
-              <p>info@ligasenior.com</p>
-              <p>+54 11 1234-5678</p>
+            <div className="border-t border-gray-700 pt-4 text-sm space-y-2">
+              <a
+                href="mailto:ligadefutbolsenior@gmail.com"
+                className="block text-sky hover:text-gold transition-colors"
+              >
+                ligadefutbolsenior@gmail.com
+              </a>
+              <a
+                href="https://wa.me/5491126590237"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-sky hover:text-gold transition-colors"
+              >
+                +549 11 2659-0237
+              </a>
             </div>
           </nav>
         </div>

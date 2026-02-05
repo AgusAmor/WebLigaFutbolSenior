@@ -17,7 +17,7 @@ Liga de Fútbol Senior es un torneo profesional que ofrece a equipos de jugadore
 
 ### 🎨 Diseño & Estética
 
-- **Paleta de Colores Personalizada**: 
+- **Paleta de Colores Personalizada**:
   - Azul Marino (#0F213E) - Profesionalismo
   - Dorado (#D8B964) - Trofeos y premios
   - Celeste (#6BA8C4) - Dinamismo deportivo
@@ -74,12 +74,14 @@ src/
 ## 🚀 Despliegue
 
 ### Vercel (Recomendado)
+
 ```bash
 pnpm install -D vercel
 vercel
 ```
 
 ### Netlify
+
 Conecta tu repositorio GitHub directamente en [Netlify](https://netlify.com)
 
 ## 📧 Funcionalidades Futuras

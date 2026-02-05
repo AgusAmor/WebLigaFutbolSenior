@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -17,13 +17,15 @@ const Footer = () => {
           </div>
           <div className="flex space-x-6">
             <a
-              href="#"
+              href="https://wa.me/5491126590237"
+              target="_blank"
               className="text-gray-400 hover:text-gold transition-colors"
             >
-              <FaFacebook className="h-6 w-6" />
+              <FaWhatsapp className="h-6 w-6" />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/ligadefutbolsenior/?hl=es-la"
+              target="_blank"
               className="text-gray-400 hover:text-gold transition-colors"
             >
               <FaInstagram className="h-6 w-6" />

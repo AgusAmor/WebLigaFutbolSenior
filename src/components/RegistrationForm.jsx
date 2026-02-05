@@ -1,4 +1,5 @@
 import React from "react";
+import { FaCheckCircle } from "react-icons/fa";
 
 const RegistrationForm = () => {
   return (
@@ -16,20 +17,13 @@ const RegistrationForm = () => {
             </h3>
             <p className="font-medium mb-6">
               Los cupos son limitados. Asegurá tu lugar en el torneo más
-              importante de la región.
+              importante de CABA y Gran Buenos Aires.
             </p>
             <ul className="space-y-2 text-sm font-bold opacity-90">
               <li className="flex items-center">
-                <span className="mr-2 bg-navy text-gold rounded-full w-5 h-5 flex items-center justify-center text-xs">
-                  ✓
-                </span>{" "}
-                Cierre de inscripción: 15/03
-              </li>
-              <li className="flex items-center">
-                <span className="mr-2 bg-navy text-gold rounded-full w-5 h-5 flex items-center justify-center text-xs">
-                  ✓
-                </span>{" "}
-                Cupos restantes: 4
+                <FaCheckCircle className="w-10 mr-3" />
+                Obtené un descuento en la inscripción anotandote antes del
+                13/02.
               </li>
             </ul>
           </div>
