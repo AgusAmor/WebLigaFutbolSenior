@@ -1,7 +1,13 @@
 import React from "react";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle, FaCheck } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
+
+import { useRegistrationForm } from "../hooks/useRegistrationForm";
 
 const RegistrationForm = () => {
+  const { formRef, formData, status, handleChange, handleSubmit } =
+    useRegistrationForm();
+
   return (
     <section
       id="inscripcion"
@@ -23,7 +29,7 @@ const RegistrationForm = () => {
               <li className="flex items-center">
                 <FaCheckCircle className="w-10 mr-3" />
                 Obtené un descuento en la inscripción anotandote antes del
-                13/02.
+                15/02.
               </li>
             </ul>
           </div>
@@ -32,7 +38,22 @@ const RegistrationForm = () => {
             <h3 className="text-2xl font-bold text-white mb-6">
               Formulario de Pre-inscripción
             </h3>
-            <form className="space-y-4">
+
+            {status === "success" && (
+              <div className="mb-4 p-4 bg-green-500/20 border border-green-500 text-green-400 rounded-lg flex items-center gap-2">
+                <FaCheck className="text-2xl" /> ¡Gracias! Nos pondremos en
+                contacto a la brevedad.
+              </div>
+            )}
+
+            {status === "error" && (
+              <div className="mb-4 p-4 bg-red-500/20 border border-red-500 text-red-400 rounded-lg flex items-center gap-2">
+                <IoMdClose className="text-2xl" /> Error al enviar. Por favor
+                intenta de nuevo.
+              </div>
+            )}
+
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-1">
@@ -40,6 +61,10 @@ const RegistrationForm = () => {
                   </label>
                   <input
                     type="text"
+                    name="team_name"
+                    value={formData.team_name}
+                    onChange={handleChange}
+                    required
                     className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-gold transition-colors"
                     placeholder="Ej. Los Halcones"
                   />
@@ -48,7 +73,12 @@ const RegistrationForm = () => {
                   <label className="block text-sm font-medium text-gray-300 mb-1">
                     Categoría
                   </label>
-                  <select className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-gold transition-colors">
+                  <select
+                    name="category"
+                    value={formData.category}
+                    onChange={handleChange}
+                    className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-gold transition-colors"
+                  >
                     <option>Senior (+35)</option>
                     <option>Master (+45)</option>
                   </select>
@@ -61,6 +91,10 @@ const RegistrationForm = () => {
                 </label>
                 <input
                   type="text"
+                  name="captain_name"
+                  value={formData.captain_name}
+                  onChange={handleChange}
+                  required
                   className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-gold transition-colors"
                   placeholder="Nombre completo"
                 />
@@ -73,6 +107,10 @@ const RegistrationForm = () => {
                   </label>
                   <input
                     type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
                     className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-gold transition-colors"
                     placeholder="+54 11..."
                   />
@@ -83,6 +121,10 @@ const RegistrationForm = () => {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                     className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-gold transition-colors"
                     placeholder="email@ejemplo.com"
                   />
@@ -91,9 +133,10 @@ const RegistrationForm = () => {
 
               <button
                 type="submit"
-                className="w-full bg-gold hover:bg-sky text-navy font-bold py-3 px-6 rounded-lg transition-colors mt-4"
+                disabled={status === "sending"}
+                className="w-full bg-gold hover:bg-sky disabled:bg-gray-600 text-navy font-bold py-3 px-6 rounded-lg transition-colors mt-4"
               >
-                Enviar Solicitud
+                {status === "sending" ? "Enviando..." : "Enviar Solicitud"}
               </button>
             </form>
           </div>

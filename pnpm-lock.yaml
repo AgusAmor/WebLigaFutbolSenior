@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      emailjs-com:
+        specifier: ^3.2.0
+        version: 3.2.0
       react:
         specifier: ^19.2.0
         version: 19.2.4
@@ -1459,6 +1462,11 @@ packages:
 
   electron-to-chromium@1.5.283:
     resolution: {integrity: sha512-3vifjt1HgrGW/h76UEeny+adYApveS9dH2h3p57JYzBSXJIKUJAvtmIytDKjcSCt9xHfrNCFJ7gts6vkhuq++w==}
+
+  emailjs-com@3.2.0:
+    resolution: {integrity: sha512-Prbz3E1usiAwGjMNYRv6EsJ5c373cX7/AGnZQwOfrpNJrygQJ15+E9OOq4pU8yC977Z5xMetRfc3WmDX6RcjAA==}
+    engines: {node: '>=12.0.0'}
+    deprecated: The SDK name changed to @emailjs/browser
 
   end-of-stream@1.1.0:
     resolution: {integrity: sha512-EoulkdKF/1xa92q25PbjuDcgJ9RDHYU2Rs3SCIvs2/dSQ3BpmxneNHmA/M7fe60M3PrV7nNGTTNbkK62l6vXiQ==}
@@ -3809,6 +3817,8 @@ snapshots:
       time-span: 4.0.0
 
   electron-to-chromium@1.5.283: {}
+
+  emailjs-com@3.2.0: {}
 
   end-of-stream@1.1.0:
     dependencies:

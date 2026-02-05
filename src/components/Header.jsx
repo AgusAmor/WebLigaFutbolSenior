@@ -39,6 +39,7 @@ const Header = () => {
           <div className="flex flex-col text-right text-sm border-l-2 border-sky/50 pl-4">
             <a
               href="mailto:ligadefutbolsenior@gmail.com"
+              target="_blank"
               className="text-sky hover:text-gold transition-colors"
             >
               ligadefutbolsenior@gmail.com
